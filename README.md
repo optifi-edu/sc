@@ -1,19 +1,9 @@
 ## Foundry
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
-
-Foundry consists of:
-
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
-
-## Documentation
-
-https://book.getfoundry.sh/
-
-## Usage
+```bash
+git clone https://github.com/optifi-edu/sc.git
+cd sc/
+```
 
 ### Build
 
@@ -21,46 +11,12 @@ https://book.getfoundry.sh/
 $ forge build
 ```
 
-### Test
-
 ```shell
-$ forge test
-```
-
-### Format
-
-```shell
-$ forge fmt
-```
-
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/OptiFi.s.sol:DeployOptiFi --rpc-url base_sepolia --broadcast --verify --etherscan-api-key base_sepolia -vvvv
+$ forge script script/OptiFi.s.sol:DeployOptiFi --rpc-url open_campus --broadcast --verify --verifier https://edu-chain-testnet.blockscout.com/api/ --gas-limit 30000000 --with-gas-price 1gwei --skip-simulation
 ```
 
 ### Cast
 
 ```shell
 $ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
 ```
